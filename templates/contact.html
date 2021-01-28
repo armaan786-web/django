@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Sad
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container my-4">
+        <h2 class="text-center">Contact Us</h2>
+
+        <form method="POST" action="/contact">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+            </div>
+            <div class="form-group">
+                <label for="query">Select your Query</label>
+                <select class="form-control" id="query" name="query">
+                    <option>Sad Status</option>
+                    <option>Romantic Status</option>
+                    <option>Urdu Status</option>
+                    <option>Girls Status</option>
+                     
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desc">What kind of Shayeri (अपना सुझाव दें किस तरह की शायरी चाहिए )</label>
+                <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+
+
+    </div>
+
+
+{% endblock body %}
